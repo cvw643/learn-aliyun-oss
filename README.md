@@ -1,4 +1,5 @@
 # learn-aliyun-oss
+本项目是阿里云OSS Web直传模式的Java参考实现
 
 ## 启动
 * 设置环境变量
