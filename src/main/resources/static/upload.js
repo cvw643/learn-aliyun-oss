@@ -16,7 +16,7 @@ function send_request() {
     }
 
     if (xmlhttp != null) {
-        xmlhttp.open("GET", "./getUploadCredentials", false);
+        xmlhttp.open("GET", "/upload/credentials", false);
         xmlhttp.send(null);
         return xmlhttp.responseText
     }
@@ -66,6 +66,15 @@ var uploader = new plupload.Uploader({
     flash_swf_url: 'lib/plupload-2.1.2/js/Moxie.swf',
     silverlight_xap_url: 'lib/plupload-2.1.2/js/Moxie.xap',
     url: 'http://oss.aliyuncs.com',
+
+    filters: {
+        mime_types : [ //只允许上传图片和zip文件
+            { title : "Image files", extensions : "jpg,gif,png,bmp" },
+            { title : "Zip files", extensions : "zip" }
+        ],
+        max_file_size : '400kb', //最大只能上传400kb的文件
+        prevent_duplicates : true //不允许选取重复文件
+    },
 
     init: {
         PostInit: function () {

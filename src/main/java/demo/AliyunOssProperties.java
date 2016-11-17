@@ -21,6 +21,9 @@ public class AliyunOssProperties {
     @NotBlank
     private String bucket;
 
+    @NotBlank
+    private String callbackHost;
+
     public String getAccessKeyId() {
         return accessKeyId;
     }
@@ -54,6 +57,15 @@ public class AliyunOssProperties {
 
     public AliyunOssProperties setBucket(String bucket) {
         this.bucket = bucket;
+        return this;
+    }
+
+    public String getCallbackHost() {
+        return callbackHost;
+    }
+
+    public AliyunOssProperties setCallbackHost(String callbackHost) {
+        this.callbackHost = callbackHost;
         return this;
     }
 }
