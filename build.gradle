@@ -1,0 +1,20 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+    }
+}
+
+apply plugin: 'spring-boot'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.aliyun.oss:aliyun-sdk-oss:2.3.0'
+    compile 'commons-codec:commons-codec:1.10'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+}
